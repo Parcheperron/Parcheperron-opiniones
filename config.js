@@ -5,6 +5,6 @@ window.PARCHE_CONFIG = {
   sedes: ["San Antonio", "Marinilla", "Porvenir", "La Ceja 1 — Ciudad Jardín", "La Ceja 2 — La Cruz"],
   logo: "assets/logo-parcheperron.png",
   // Enlace público a tu política de tratamiento de datos personales.
-  politicaPrivacidadUrl: "",
+  politicaPrivacidadUrl: "https://parcheperron.github.io/Parcheperron-opiniones/politica.html?",
   maxImagenMB: 4
 };
