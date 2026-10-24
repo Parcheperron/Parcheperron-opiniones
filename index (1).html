@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="description" content="Cuéntanos tu experiencia en Parche Perrón. Queremos escucharte y mejorar.">
+<title>Tu opinión importa | Parche Perrón</title>
+<style>
+@font-face{font-family:Parche;src:url('./assets/tipografia-parche.woff2') format('woff2');font-display:swap}
+:root{color-scheme:dark;--amarillo:#ffcb24;--texto:#fff;--gris:#c2c2c2}
+*{box-sizing:border-box}
+html{min-height:100%}
+body{margin:0;min-height:100vh;color:var(--texto);font:16px/1.5 system-ui,-apple-system,'Segoe UI',sans-serif;background-color:#09090b;background-image:radial-gradient(circle at 18% 16%,#ffffff0c 0 1px,transparent 2px),radial-gradient(circle at 76% 62%,#ffffff09 0 1px,transparent 2px),repeating-linear-gradient(118deg,#ffffff03 0 1px,transparent 1px 9px),linear-gradient(150deg,#17171a 0%,#0b0b0d 54%,#060607 100%);background-size:31px 29px,47px 41px,auto,auto;position:relative;isolation:isolate}
+/* Silueta urbana sutil, sin imágenes externas */
+body::before{content:"";position:fixed;inset:auto 0 0;height:38vh;z-index:-1;pointer-events:none;opacity:.55;background:linear-gradient(to top,#030304 0%,#050506 75%,transparent 100%);clip-path:polygon(0 66%,4% 66%,4% 48%,9% 48%,9% 60%,13% 60%,13% 37%,18% 37%,18% 67%,22% 67%,22% 51%,28% 51%,28% 32%,33% 32%,33% 62%,38% 62%,38% 44%,43% 44%,43% 68%,48% 68%,48% 25%,53% 25%,53% 53%,59% 53%,59% 39%,64% 39%,64% 68%,69% 68%,69% 49%,74% 49%,74% 29%,79% 29%,79% 62%,84% 62%,84% 46%,89% 46%,89% 60%,94% 60%,94% 40%,100% 40%,100% 100%,0 100%)}
+main{width:min(100% - 32px,680px);margin:auto;padding:32px 0 60px}
+.brand{text-align:center;margin-bottom:26px}.logo{display:block;max-width:min(100%,275px);max-height:175px;object-fit:contain;margin:0 auto 12px}.brand h1{font-family:Parche,Impact,'Arial Black',sans-serif;font-size:clamp(35px,8vw,53px);font-style:italic;line-height:1.08;text-transform:uppercase;color:var(--amarillo);margin:10px 0 13px}.brand p{color:#d1d1d1;max-width:490px;margin:0 auto}
+.card{background:#202022f2;border:1px solid #39393d;border-radius:19px;padding:clamp(20px,4vw,32px);box-shadow:0 18px 45px #0008;backdrop-filter:blur(3px)}
+.form-stack{display:grid;gap:19px}.block-heading{display:flex;align-items:center;gap:11px;color:var(--amarillo);font-weight:900;font-size:19px;margin:0 0 20px}.block-number{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;border:1px solid #75621d;background:#3a3118;border-radius:10px;font-size:14px}.block-intro{color:#c8c8c8;margin:-7px 0 20px;font-size:14px}.field{margin-bottom:22px}.field:last-child{margin-bottom:0}label{display:block;font-weight:750;margin-bottom:8px}label small{font-weight:400;color:#c1c1c1}.req{color:var(--amarillo)}
+input,select,textarea{width:100%;border:1px solid #525257;border-radius:11px;background:#131315;color:white;font:inherit;padding:13px 14px;outline-offset:2px}input:focus,select:focus,textarea:focus{outline:2px solid var(--amarillo);border-color:var(--amarillo)}textarea{min-height:150px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.note{font-size:13px;color:#bcbcbc;margin:8px 0 0}
+.contact{background:#171719;border:1px solid #454549;border-radius:13px;padding:17px}.checkrow{display:flex;gap:12px;align-items:flex-start}.checkrow input{width:19px;height:19px;flex:none;margin:4px 0 0;accent-color:var(--amarillo)}.checkrow label{margin:0;cursor:pointer}.contact-extra{margin-top:16px}.hidden{display:none!important}
+.privacy{font-size:13px;color:#c6c6c6;line-height:1.65;margin:0 0 18px}.privacy a{color:var(--amarillo);text-underline-offset:3px}.error{color:#ff9696;font-size:14px;margin:0 0 14px}.submit{width:100%;border:0;border-radius:12px;padding:17px;background:var(--amarillo);color:#151515;font-weight:900;font-size:18px;cursor:pointer}.submit:hover{filter:brightness(1.06)}.submit:disabled{opacity:.6;cursor:wait}.footer{text-align:center;color:#a8a8a8;font-size:12px;margin:28px auto 0}
+@media(max-width:450px){.two{grid-template-columns:1fr}main{padding-top:23px}.card{padding:20px}}
+</style>
+</head>
+<body>
+<main>
+<header class="brand">
+<img class="logo" id="logo" alt="Logo de Parche Perrón" onerror="this.style.display='none'">
+<h1>Tu opinión importa</h1>
+<p>¿Algo no salió como esperabas? Cuéntanos qué pasó. Queremos escucharte y mejorar nuestro parche.</p>
+</header>
+<form id="form" class="form-stack" method="POST" target="_blank" enctype="application/x-www-form-urlencoded">
+<section class="card" aria-labelledby="step1"><h2 class="block-heading" id="step1"><span class="block-number">01</span> Cuéntanos qué pasó</h2>
+<div class="field"><label for="sede">¿En cuál sede ocurrió? <span class="req">*</span></label><select name="sede" id="sede" required><option value="">Selecciona la sede</option></select></div>
+<div class="two">
+<div class="field"><label for="fecha">Fecha <small>(opcional)</small></label><input id="fecha" name="fecha" type="date"></div>
+<div class="field"><label for="hora">Hora aproximada <small>(opcional)</small></label><input id="hora" name="hora" type="time"></div>
+</div>
+<div class="field"><label for="descripcion">Cuéntanos qué pasó <span class="req">*</span></label><textarea id="descripcion" name="descripcion" required minlength="10" maxlength="5000" placeholder="Describe lo sucedido..."></textarea><p class="note">Mínimo 10 caracteres. Evita compartir información bancaria o sensible.</p></div>
+</section>
+<section class="card" aria-labelledby="step2"><h2 class="block-heading" id="step2"><span class="block-number">02</span> ¿Quieres que te contactemos?</h2><p class="block-intro">Si deseas que nuestro equipo te ayude a resolver el problema, puedes dejarnos tu WhatsApp.</p>
+<div class="contact">
+<div class="checkrow"><input type="checkbox" id="contactar"><label for="contactar">Quiero que me contacten por WhatsApp para ayudarme a resolver el problema <small>(opcional)</small></label></div>
+<div id="contactExtra" class="contact-extra hidden"><label for="whatsapp">Tu número de WhatsApp <span class="req">*</span></label><input type="tel" id="whatsapp" name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="Ej. 3101234567" pattern="[0-9+() .-]{10,20}"><p class="note">Solo lo utilizaremos para comunicarnos sobre esta solicitud. Si tienes fotografías, podrás compartirlas durante la conversación.</p></div>
+</div>
+</section>
+<section class="card" aria-labelledby="step3"><h2 class="block-heading" id="step3"><span class="block-number">03</span> Enviar opinión</h2>
+<p class="privacy">Al enviar, autorizas el tratamiento de la información proporcionada para gestionar tu opinión y, si lo solicitas, contactarte. Tus datos se almacenarán de forma privada en los servicios de Google configurados por Parche Perrón. Consulta nuestra <a id="privacyLink" href="#" target="_blank" rel="noopener noreferrer">política de tratamiento de datos</a> antes de enviar.</p>
+<input type="hidden" name="consentimiento" value="si">
+<input type="hidden" name="origen" value="web-opiniones">
+<p class="error hidden" role="alert" id="error"></p>
+<button class="submit" id="submit" type="submit">Enviar mi opinión ↗</button>
+<p class="note">Al enviar se abrirá una pestaña de confirmación. Espera a que indique que recibimos tu opinión.</p>
+</section>
+</form>
+<p class="footer">© Parche Perrón · Hecho para parchar 🌭</p>
+</main>
+<script src="./config.js?v=6"></script>
+<script>
+(()=>{
+'use strict';
+const cfg=window.PARCHE_CONFIG||{};
+const form=document.getElementById('form');
+const sede=document.getElementById('sede');
+const contactar=document.getElementById('contactar');
+const extra=document.getElementById('contactExtra');
+const wa=document.getElementById('whatsapp');
+const error=document.getElementById('error');
+const submit=document.getElementById('submit');
+if(cfg.logo)document.getElementById('logo').src=cfg.logo;
+const policy=document.getElementById('privacyLink');
+if(cfg.politicaPrivacidadUrl)policy.href=cfg.politicaPrivacidadUrl;
+else policy.addEventListener('click',e=>{e.preventDefault();alert('La política de tratamiento de datos todavía no está publicada.')});
+(cfg.sedes||[]).forEach(n=>{const o=document.createElement('option');o.value=n;o.textContent=n;sede.append(o)});
+contactar.addEventListener('change',()=>{extra.classList.toggle('hidden',!contactar.checked);wa.required=contactar.checked;if(!contactar.checked)wa.value=''});
+form.addEventListener('submit',e=>{
+e.preventDefault();
+error.classList.add('hidden');
+if(!cfg.politicaPrivacidadUrl){error.textContent='Antes de publicar debes configurar la política de tratamiento de datos en config.js.';error.classList.remove('hidden');return}
+if(!cfg.appsScriptUrl||!/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(cfg.appsScriptUrl)){error.textContent='Primero debes configurar la URL de Google Apps Script en config.js.';error.classList.remove('hidden');return}
+if(!form.reportValidity())return;
+form.action=cfg.appsScriptUrl;
+// Se envían únicamente campos de texto. Las imágenes se eliminaron del formulario.
+submit.disabled=true;
+submit.textContent='Abriendo confirmación...';
+form.submit();
+window.setTimeout(()=>{submit.disabled=false;submit.textContent='Enviar mi opinión ↗'},1200);
+});
+})();
+</script>
+</body>
+</html>
