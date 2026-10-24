@@ -1,0 +1,10 @@
+// Edita únicamente los datos de este archivo.
+window.PARCHE_CONFIG = {
+  // URL que termina en /exec al publicar Google Apps Script.
+  appsScriptUrl: "",
+  sedes: ["San Antonio", "Marinilla", "Porvenir", "La Ceja 1 — Ciudad Jardín", "La Ceja 2 — La Cruz"],
+  logo: "assets/logo-parcheperron.png",
+  // Enlace público a tu política de tratamiento de datos personales.
+  politicaPrivacidadUrl: "",
+  maxImagenMB: 4
+};
